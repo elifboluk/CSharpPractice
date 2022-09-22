@@ -964,5 +964,43 @@ namespace CSharp_For_Loop_Practice
             }
         }
         
+        public static void QuestionBinary()
+        {
+            Console.WriteLine("Enter the number: ");
+            int number = Convert.ToInt32(Console.ReadLine());
+            List<int> binarylist = new List<int>(); 
+            for (int i = 0; i >= 0; i++)
+            {
+                if (number==0)
+                {
+                    break;
+                }
+                binarylist.Add(number % 2);
+                number = (number - (number % 2)) / 2;
+            }
+            binarylist.Reverse();
+            foreach (var bl in binarylist)
+            {
+                Console.Write(bl);
+            }
+        }
+
+        public static void QuestionDecimal()
+        {
+            Console.WriteLine("Enter the number: ");
+            string number = Console.ReadLine();
+            int decimalnumber = 0;
+            for(int i=0;i<number.Length;i++)
+            {
+                if (number[i]=='1')
+                {
+                    decimalnumber += Convert.ToInt32(Math.Pow(2, Convert.ToDouble(number.Length-1-i)));
+                    
+                }
+            }
+            
+            
+            Console.WriteLine(decimalnumber);
+        }
     }
 }
