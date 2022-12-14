@@ -10,7 +10,7 @@ namespace CSharp_For_Loop_Practice
     {
         public static void Main(string[] args)
         {
-            ForLoopQ.QuestionDecimal();
+            ForLoopQ.QuestionArray();
             Console.ReadLine();
         }
     }

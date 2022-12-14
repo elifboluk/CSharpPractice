@@ -928,11 +928,11 @@ namespace CSharp_For_Loop_Practice
             string hyphen = "-";
             string pLine = "|";
             int peak = 0;
-            
+
             for (int i = 0; i < 7; i++)
             {
                 Console.Write(" ");
-                if (i==6)
+                if (i == 6)
                 {
                     Console.Write(star);
                 }
@@ -941,11 +941,11 @@ namespace CSharp_For_Loop_Practice
             int space = 6;
             for (int i = 1; i < 10; i++)
             {
-                if (i>=1 && i<=4)
+                if (i >= 1 && i <= 4)
                 {
-                    for (int j = 0; j < 9+i; j++)
+                    for (int j = 0; j < 9 + i; j++)
                     {
-                        if (j==space || j==space+(i*2))
+                        if (j == space || j == space + (i * 2))
                         {
                             for (int k = 1; k <= i; k++)
                             {
@@ -955,7 +955,7 @@ namespace CSharp_For_Loop_Practice
                         else
                         {
                             Console.Write(" ");
-                        }                                                
+                        }
                     }
                     Console.WriteLine();
                     space--;
@@ -963,15 +963,15 @@ namespace CSharp_For_Loop_Practice
                 }
             }
         }
-        
+
         public static void QuestionBinary()
         {
             Console.WriteLine("Enter the number: ");
             int number = Convert.ToInt32(Console.ReadLine());
-            List<int> binarylist = new List<int>(); 
+            List<int> binarylist = new List<int>();
             for (int i = 0; i >= 0; i++)
             {
-                if (number==0)
+                if (number == 0)
                 {
                     break;
                 }
@@ -990,17 +990,29 @@ namespace CSharp_For_Loop_Practice
             Console.WriteLine("Enter the number: ");
             string number = Console.ReadLine();
             int decimalnumber = 0;
-            for(int i=0;i<number.Length;i++)
+            for (int i = 0; i < number.Length; i++)
             {
-                if (number[i]=='1')
+                if (number[i] == '1')
                 {
-                    decimalnumber += Convert.ToInt32(Math.Pow(2, Convert.ToDouble(number.Length-1-i)));
-                    
+                    decimalnumber += Convert.ToInt32(Math.Pow(2, Convert.ToDouble(number.Length - 1 - i)));
+
                 }
             }
-            
-            
+
+
             Console.WriteLine(decimalnumber);
+        }
+
+        public static void QuestionArray()
+        {
+            int[] ar = { 2, 7, 99, 15, 13, 3, 22, 42, 21 };
+            var line = ar.ToList();
+            line.Sort();
+            foreach(int item in line)
+            {
+                Console.WriteLine(item);
+            }
+
         }
     }
 }
