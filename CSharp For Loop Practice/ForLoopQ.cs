@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.Metrics;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -879,6 +881,7 @@ namespace CSharp_For_Loop_Practice
                 Console.WriteLine();
             }
         }
+
         public static void QuestionPlusPattern()
         {
             /*
@@ -1013,6 +1016,125 @@ namespace CSharp_For_Loop_Practice
                 Console.WriteLine(item);
             }
 
+        }
+
+        public static void QuestionBasicExample1()
+        {
+            Console.WriteLine("Please enter two number.");
+            double result=Math.Pow(int.Parse(Console.ReadLine()), 2) + Math.Pow(int.Parse(Console.ReadLine()), 2);
+            Console.WriteLine(result);
+        }
+
+        public static void QuestionBasicExample2()
+        {
+            double result = 0;
+            for (int i = 1; i <= 10; i++)
+            {
+                result+=Math.Pow(i, 3);     
+            }
+            Console.WriteLine(result);
+        }
+
+        public static void QuestionBasicExample3()
+        {
+            // Write an application that does the multiplication of positive numbers using addition.
+            Console.WriteLine("Please enter the first number.");
+            int number1 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Please enter the second number.");
+            int number2 = Convert.ToInt32(Console.ReadLine());
+
+            int result = 0;
+            for (int i = 0; i < number1; i++)
+            {
+                result += number2;
+            }
+            Console.Write("Result:");
+            Console.Write(result);
+            // Console.Writeline($"{number1} x {number2} = {result}");
+        }
+
+        public static void QuestionBasicExample4()
+        {
+            // Write an application that divides positive numbers by subtraction.
+            Console.WriteLine("Please enter the first number.");
+            int number1 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Please enter the second number.");
+            int number2 = Convert.ToInt32(Console.ReadLine());
+            int counter = 0;
+            for (int i = 0; i < number1 ; i++)
+            {
+                number1 = number1 - number2;
+                counter++;
+                if (number1 < number2)
+                    break;
+            }
+            Console.Write("Result:"+ counter); 
+        }
+
+        public static void QuestionBasicExample5()
+        {   // Write an application that tells you how many digits the entered number has.         
+            Console.WriteLine("Please enter the number.");
+            int number = Convert.ToInt32(Console.ReadLine());            
+            int counter = 1;
+            for (; number>=10; )
+            {
+                number /= 10;
+                counter++;                
+            }
+            Console.Write("Result:" + counter);
+        }
+
+        public static void QuestionBasicExample6()
+        {
+            Console.WriteLine("Please enter a 3-digit number.");
+            int number = Convert.ToInt32(Console.ReadLine());
+            int number3 = number;
+            int digitnumber = 1;
+            while (number3 >= 10)
+            {
+                digitnumber++;
+                number3 /= 10;
+            }
+            if (digitnumber==3)
+            {
+                double sumcube = 0;
+                int number2 = number;
+                for (int i = 0; i < 3; i++)
+                {
+                    sumcube += Math.Pow(number2%10,3);
+                    number2 = (number2 - number2 % 10) / 10;
+                }
+                if (sumcube == number)
+                {
+                    Console.WriteLine("Number is armstrong.");
+                }
+                else { Console.WriteLine("Number is not armstrong."); }
+            }
+            else { Console.WriteLine("Please enter a 3-digit number."); }
+        }
+
+        public static void QuestionBasicExample7()
+        {
+            Console.WriteLine("Please enter a 3-digit number.");
+            string number = Console.ReadLine();
+            double result = 0;
+            if (number.Length!=3)
+            {
+                Console.WriteLine("Please enter a 3-digit number.");
+            }
+            else
+            {
+                for (int i = 0; i < 3; i++)
+                {
+                    result += Math.Pow(Convert.ToDouble(number[i].ToString()), 3);
+                }
+                if (Convert.ToDouble(number) == result)
+                {
+                    Console.WriteLine("Number is armstrong.");
+                }
+                else { Console.WriteLine("Number is not armstrong."); }
+            }
+            
         }
     }
 }
