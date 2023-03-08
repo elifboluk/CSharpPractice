@@ -1157,6 +1157,37 @@ namespace CSharp_For_Loop_Practice
             }
             return result;
         }
-    
+
+        public static string LongestCommonPrefix(string[] strs)
+        {
+            string result = "";
+            if (strs.Length == 0 || strs[0].Length==0) { return result; }
+            for (int i = 0; i >= 0; i++)
+            {
+                var character = strs[0][i];
+                var counter = 1;
+                for (int j = 1; j < strs.Length; j++)
+                {
+                    if (strs[j].Length-1<i)
+                    {
+                        break;
+                    }
+                    if (character.Equals(strs[j][i]))
+                    {
+                        counter++;
+                    }
+                }
+                if (counter == strs.Length)
+                {
+                    result += character;
+                }
+                else
+                {
+                    break;
+                }
+            }
+            return result;
+        }
+
     }
 }

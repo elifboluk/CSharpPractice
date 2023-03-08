@@ -10,7 +10,9 @@ namespace CSharp_For_Loop_Practice
     {
         public static void Main(string[] args)
         {
-            ForLoopQ.QuestionBasicExample7();
+            string[] dizi = { "df", "", "" };
+            Console.WriteLine(ForLoopQ.LongestCommonPrefix(dizi));
+            // ForLoopQ.QuestionBasicExample7();
             Console.ReadLine();
         }
     }
