@@ -1136,5 +1136,27 @@ namespace CSharp_For_Loop_Practice
             }
             
         }
+
+        public int RomanToInt(string s)
+        {
+            int[] value = { 1, 5, 10, 50, 100, 500, 1000 };
+            string symbol = "IVXLCDM";
+            int result = 0;
+            for (int i = s.Length - 1; i >= 0; i--)
+            {
+                result += value[symbol.IndexOf(s[i])];
+            }
+            string[] exception = { "IV", "IX", "XL", "XC", "CD", "CM" };
+            int[] exvalue = { 2, 2, 20, 20, 200, 200 };
+            for (int i = 0; i < 6; i++)
+            {
+                if (s.Contains(exception[i]))
+                {
+                    result -= exvalue[i];
+                }
+            }
+            return result;
+        }
+    
     }
 }
