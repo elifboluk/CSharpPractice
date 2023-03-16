@@ -928,8 +928,8 @@ namespace CSharp_For_Loop_Practice
                      |   |
             */
             string star = "*";
-            string hyphen = "-";
-            string pLine = "|";
+            //string hyphen = "-";
+            //string pLine = "|";
             int peak = 0;
 
             for (int i = 0; i < 7; i++)
