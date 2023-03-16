@@ -96,5 +96,27 @@ namespace CSharp_For_Loop_Practice
             }
             return -1;
         }
+
+        // Picking Numbers
+        public static int pickingNumbers(List<int> a)
+        {
+            a.Sort();
+            int ctr = 1;
+            List<int> e = new List<int>();
+
+            for (int i = 0; i < a.Count; i++)
+            {
+                for (int j = i + 1; j < a.Count; j++)
+                {
+                    if (a[j] - a[i] == 1 || a[j] - a[i] == 0)
+                    {
+                        ctr++;
+                    }
+                }
+                e.Add(ctr);
+                ctr = 1;
+            }
+            return e.Max();
+        }
     }
 }
