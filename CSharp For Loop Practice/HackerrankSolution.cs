@@ -118,5 +118,33 @@ namespace CSharp_For_Loop_Practice
             }
             return e.Max();
         }
+
+        // Utopian Tree
+        public static int utopianTree(int n)
+        {
+            int height = 0;
+            for (int i = 0; i <= n; i++)
+            {
+                if (i % 2 == 0)
+                {
+                    height += 1;
+                }
+                if (i % 2 == 1)
+                {
+                    height = height * 2;
+                }
+            }
+            return height;
+        }
+
+        // Save The Prisoner!
+        public static int saveThePrisoner(int n, int m, int s)
+        {
+            int sum = m + s - 1;
+            int result = sum % n;
+            if (result == 0) { return n; }
+            return result;
+        }
+
     }
 }
