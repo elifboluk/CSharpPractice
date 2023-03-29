@@ -14,8 +14,15 @@ namespace CSharp_For_Loop_Practice
             string bubirstr = "fun&!! time";
             //Console.WriteLine(HackerrankSolution.LongestWord(bubirstr));
             // ForLoopQ.QuestionBasicExample7();
-            Console.WriteLine(HackerrankSolution.findDigits(1202));
-           
+            //Console.WriteLine(HackerrankSolution.findDigits(1202));
+            List<int> arr = new List<int>() {7, 2, 5, 3, 5, 3};
+            List<int> brr = new List<int>() {7, 2, 5, 4, 6, 3, 5, 3};
+            List<int> sonuc = new List<int>(); 
+            sonuc=HackerrankSolution.missingNumbers(arr,brr);
+            foreach (var item in sonuc)
+            {
+                Console.WriteLine(item);
+            }
             Console.ReadLine();
         }
     }

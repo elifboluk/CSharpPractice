@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -183,6 +184,55 @@ namespace CSharp_For_Loop_Practice
                 }
             }
             return ctr;
+        }
+
+        // Missing Numbers (To be continued...)
+        public static List<int> missingNumbers(List<int> arr, List<int> brr)
+        {
+            // arr = {7, 2, 5, 3, 5, 3};
+            // brr = {7, 2, 5, 4, 6, 3, 5, 3 };
+            var ctr = 0;
+            var ctr2 = 0;
+            List<int> result = new List<int>();
+            for (int i = 0; i < brr.Count; i++)
+            {
+                var degisken = brr[i];
+                for (int k = 0; k < brr.Count; k++)
+                {
+                    if (brr[k] == degisken)
+                    {
+                        ctr++;
+                    }
+                }
+                
+                for (int j = 0; j < arr.Count; j++)
+                {
+                    if (arr[j] == degisken)
+                    {
+                        ctr2++;
+                    }
+                }
+
+                if (ctr != ctr2 && !result.Contains(brr[i]))
+                {
+                    result.Add(brr[i]);
+                }
+                ctr = 0;
+                ctr2 = 0;
+            }
+            result.Sort();
+            return result;
+        }
+
+        // Extra Long Factorials
+        public static void extraLongFactorials(int n)
+        {
+            BigInteger result = 1;
+            for (int i = 1; i <= n; i++)
+            {
+                result = i * result; // using System.Numerics;
+            }
+            Console.WriteLine(result);
         }
 
 
