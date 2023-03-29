@@ -12,8 +12,10 @@ namespace CSharp_For_Loop_Practice
         {
             //string[] dizi = { "df", "", "" };
             string bubirstr = "fun&!! time";
-            Console.WriteLine(HackerrankSolution.LongestWord(bubirstr));
+            //Console.WriteLine(HackerrankSolution.LongestWord(bubirstr));
             // ForLoopQ.QuestionBasicExample7();
+            Console.WriteLine(HackerrankSolution.findDigits(1202));
+           
             Console.ReadLine();
         }
     }

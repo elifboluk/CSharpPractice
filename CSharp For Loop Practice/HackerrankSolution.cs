@@ -168,6 +168,23 @@ namespace CSharp_For_Loop_Practice
 
         }
 
+        // Find Digits
+        public static int findDigits(int n)
+        {
+            int ctr = 0;
+            string m = n.ToString();            
+            for (int i = 0; i < m.Length; i++)
+            {
+                //string a = m[i].ToString();
+                int hane = Convert.ToInt32(m[i].ToString()); // Convert.ToInt32(m[i]) içerisine char girince ascii koduna çeviriyor. Bu yüzden ToString() ile stringe çevirip kullanıyoruz!!! 
+                if (hane > 0 && n % hane == 0 ) // Kod soldan sağa doğru okunur. Bu yüzden önce "sıfırdan büyük mü?" diye kontrol ettirdik. 
+                {
+                    ctr++;
+                }
+            }
+            return ctr;
+        }
+
 
     }
 }
