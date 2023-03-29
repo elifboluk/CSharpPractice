@@ -146,5 +146,28 @@ namespace CSharp_For_Loop_Practice
             return result;
         }
 
+        // Angry Professor
+        public static string angryProfessor(int k, List<int> a)
+        {
+            var ctr = 0;
+            for (int i = 0; i < a.Count; i++)
+            {
+                if (a[i] <= 0)
+                {
+                    ctr++;
+                }
+            }
+            if (ctr < k)
+            {
+                return "YES";
+            }
+            else
+            {
+                return "NO";
+            }
+
+        }
+
+
     }
 }
