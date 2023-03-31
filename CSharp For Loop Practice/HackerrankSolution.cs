@@ -235,6 +235,48 @@ namespace CSharp_For_Loop_Practice
             Console.WriteLine(result);
         }
 
+        // Lonely Integer
+        public static int lonelyinteger(List<int> a)
+        {
+            int ctr = 0;
+            int result = 0;
+            for (int i = 0; i < a.Count; i++)
+            {
+                var gecici = a[i];
+                for (int j = 0; j < a.Count; j++)
+                {
+                    if (gecici == a[j])
+                    {
+                        ctr++;
+                    }
+                }
+                if (ctr == 1)
+                {
+                    result = a[i];
+                }
+                ctr = 0;
+            }
+            return result;
+
+        }
+
+        // Maximum Toys
+        public static int maximumToys(List<int> prices, int k)
+        {
+            var ctr = 0;
+            var sumo = 0;
+            prices.Sort();
+            for (int i = 0; i < prices.Count; i++)
+            {
+                sumo += prices[i];
+                ctr++;
+                if (sumo > k)
+                {
+                    break;
+                }
+            }
+            return ctr - 1;
+        }
 
     }
 }
