@@ -278,5 +278,67 @@ namespace CSharp_For_Loop_Practice
             return ctr - 1;
         }
 
+        // Minimum Number
+        public static int minimumNumber(int n, string password)
+        {
+            // #HackerRank
+            var numbers = "0123456789";
+            var lower_case = "abcdefghijklmnopqrstuvwxyz";
+            var upper_case = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            var special_characters = "!@#$%^&*()-+";
+            int ctr = 4;
+            int ctr1 = 1;
+            int ctr2 = 1;
+            int ctr3 = 1;
+            int ctr4 = 1;
+            for (int i = 0; i < password.Length; i++)
+            {
+                if (numbers.Contains(password[i]) && ctr1 == 1)
+                {
+                    ctr1--;
+                    ctr--;
+                }
+
+                if (lower_case.Contains(password[i]) && ctr2 == 1)
+                {
+                    ctr2--;
+                    ctr--;
+                }
+
+                if (upper_case.Contains(password[i]) && ctr3 == 1)
+                {
+                    ctr3--;
+                    ctr--;
+                }
+
+                if (special_characters.Contains(password[i]) && ctr4 == 1)
+                {
+                    ctr4--;
+                    ctr--;
+                } // ctr=1;
+                  // Length=3                
+            }
+            if (password.Length + ctr < 6)//IGEC =4 ve ctr=3
+            {
+                ctr += 6 - password.Length - ctr;
+            }
+            return ctr;
+        }
+
+        // Camel Case
+        public static int camelcase(string s)
+        {
+            int ctr = 1;
+
+            for (int i = 0; i < s.Length; i++)
+            {
+                if (char.IsUpper(s[i]))
+                {
+                    ctr++;
+                }
+            }
+            return ctr;
+        }
+
     }
 }
