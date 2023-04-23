@@ -45,6 +45,7 @@ namespace CSharp_For_Loop_Practice
             return ctr;
         }
 
+        // Longest Word
         public static string LongestWord(string sen)
         {
             //List<char> yeniliste = sen.ToList();

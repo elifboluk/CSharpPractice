@@ -1011,7 +1011,7 @@ namespace CSharp_For_Loop_Practice
             int[] ar = { 2, 7, 99, 15, 13, 3, 22, 42, 21 };
             var line = ar.ToList();
             line.Sort();
-            foreach(int item in line)
+            foreach (int item in line)
             {
                 Console.WriteLine(item);
             }
@@ -1021,7 +1021,7 @@ namespace CSharp_For_Loop_Practice
         public static void QuestionBasicExample1()
         {
             Console.WriteLine("Please enter two number.");
-            double result=Math.Pow(int.Parse(Console.ReadLine()), 2) + Math.Pow(int.Parse(Console.ReadLine()), 2);
+            double result = Math.Pow(int.Parse(Console.ReadLine()), 2) + Math.Pow(int.Parse(Console.ReadLine()), 2);
             Console.WriteLine(result);
         }
 
@@ -1030,7 +1030,7 @@ namespace CSharp_For_Loop_Practice
             double result = 0;
             for (int i = 1; i <= 10; i++)
             {
-                result+=Math.Pow(i, 3);     
+                result += Math.Pow(i, 3);
             }
             Console.WriteLine(result);
         }
@@ -1061,25 +1061,25 @@ namespace CSharp_For_Loop_Practice
             Console.WriteLine("Please enter the second number.");
             int number2 = Convert.ToInt32(Console.ReadLine());
             int counter = 0;
-            for (int i = 0; i < number1 ; i++)
+            for (int i = 0; i < number1; i++)
             {
                 number1 = number1 - number2;
                 counter++;
                 if (number1 < number2)
                     break;
             }
-            Console.Write("Result:"+ counter); 
+            Console.Write("Result:" + counter);
         }
 
         public static void QuestionBasicExample5()
         {   // Write an application that tells you how many digits the entered number has.         
             Console.WriteLine("Please enter the number.");
-            int number = Convert.ToInt32(Console.ReadLine());            
+            int number = Convert.ToInt32(Console.ReadLine());
             int counter = 1;
-            for (; number>=10; )
+            for (; number >= 10;)
             {
                 number /= 10;
-                counter++;                
+                counter++;
             }
             Console.Write("Result:" + counter);
         }
@@ -1095,13 +1095,13 @@ namespace CSharp_For_Loop_Practice
                 digitnumber++;
                 number3 /= 10;
             }
-            if (digitnumber==3)
+            if (digitnumber == 3)
             {
                 double sumcube = 0;
                 int number2 = number;
                 for (int i = 0; i < 3; i++)
                 {
-                    sumcube += Math.Pow(number2%10,3);
+                    sumcube += Math.Pow(number2 % 10, 3);
                     number2 = (number2 - number2 % 10) / 10;
                 }
                 if (sumcube == number)
@@ -1118,7 +1118,7 @@ namespace CSharp_For_Loop_Practice
             Console.WriteLine("Please enter a 3-digit number.");
             string number = Console.ReadLine();
             double result = 0;
-            if (number.Length!=3)
+            if (number.Length != 3)
             {
                 Console.WriteLine("Please enter a 3-digit number.");
             }
@@ -1134,7 +1134,7 @@ namespace CSharp_For_Loop_Practice
                 }
                 else { Console.WriteLine("Number is not armstrong."); }
             }
-            
+
         }
 
         public int RomanToInt(string s)
@@ -1161,14 +1161,14 @@ namespace CSharp_For_Loop_Practice
         public static string LongestCommonPrefix(string[] strs)
         {
             string result = "";
-            if (strs.Length == 0 || strs[0].Length==0) { return result; }
+            if (strs.Length == 0 || strs[0].Length == 0) { return result; }
             for (int i = 0; i >= 0; i++)
             {
                 var character = strs[0][i];
                 var counter = 1;
                 for (int j = 1; j < strs.Length; j++)
                 {
-                    if (strs[j].Length-1<i)
+                    if (strs[j].Length - 1 < i)
                     {
                         break;
                     }
@@ -1187,6 +1187,22 @@ namespace CSharp_For_Loop_Practice
                 }
             }
             return result;
+        }
+
+        public static void Arr2d()
+        {
+            int[,] ornek = new int[3, 3];
+            var count = 1;
+            for (int i = 0; i < 3; i++)
+            {
+                for (int j = 0; j < 3; j++)
+                {
+                    ornek[i, j] = count;
+                    count++;
+                    Console.Write($" {ornek[i, j]} ");
+                }
+                Console.WriteLine();
+            }
         }
 
     }

@@ -11,18 +11,19 @@ namespace CSharp_For_Loop_Practice
         public static void Main(string[] args)
         {
             //string[] dizi = { "df", "", "" };
-            string bubirstr = "fun&!! time";
+            //string bubirstr = "fun&!! time";
             //Console.WriteLine(HackerrankSolution.LongestWord(bubirstr));
             // ForLoopQ.QuestionBasicExample7();
             //Console.WriteLine(HackerrankSolution.findDigits(1202));
-            List<int> arr = new List<int>() {7, 2, 5, 3, 5, 3};
-            List<int> brr = new List<int>() {7, 2, 5, 4, 6, 3, 5, 3};
-            List<int> sonuc = new List<int>(); 
-            sonuc=HackerrankSolution.missingNumbers(arr,brr);
-            foreach (var item in sonuc)
-            {
-                Console.WriteLine(item);
-            }
+            //List<int> arr = new List<int>() {7, 2, 5, 3, 5, 3};
+            //List<int> brr = new List<int>() {7, 2, 5, 4, 6, 3, 5, 3};
+            //List<int> sonuc = new List<int>(); 
+            //sonuc=HackerrankSolution.missingNumbers(arr,brr);
+            //foreach (var item in sonuc)
+            //{
+            //    Console.WriteLine(item);
+            //}
+            ForLoopQ.Arr2d();
             Console.ReadLine();
         }
     }
